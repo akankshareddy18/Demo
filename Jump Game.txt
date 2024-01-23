@@ -1,0 +1,16 @@
+object Solution {
+    def canJump(nums: Array[Int]): Boolean = {
+        var maxjump = 0
+        var s = nums.length
+        for(i<- 0 until s ){
+            if(i> maxjump) return false
+            if(i + nums(i) > maxjump) maxjump = i+ nums(i)
+
+            if(maxjump>= s - 1 ) return true
+        }
+        return false
+        
+
+        
+    }
+}

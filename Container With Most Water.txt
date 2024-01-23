@@ -1,0 +1,34 @@
+class Solution(object):
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        s = len(height)
+        i = 0
+        j = s -1
+        l = 0
+        b = 0
+        area = 0
+        maxarea = 0
+        
+        while (i<j):
+            
+            b = j - i
+            
+            if(height[i]> height[j]):
+                l = height[j]
+                        
+            else:
+                l = height[i]
+                        
+            area = l * b
+                    
+            if (area > maxarea):
+                maxarea = area
+            
+            if height[i] < height[j]:
+                i +=1
+            else :
+                j -= 1
+        return maxarea       

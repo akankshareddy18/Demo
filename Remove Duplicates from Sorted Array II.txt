@@ -1,0 +1,14 @@
+object Solution {
+    def removeDuplicates(nums: Array[Int]): Int = {
+       var start = 0
+       var end  = 1
+       var count = 1
+       while(end != nums.size){
+           if(nums(start) == nums(end)){
+               if
+               end += 1
+               count += 1
+           }
+       }
+    }
+}

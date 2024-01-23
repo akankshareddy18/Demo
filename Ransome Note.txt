@@ -1,0 +1,27 @@
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        """
+        :type ransomNote: str
+        :type magazine: str
+        :rtype: bool
+        """
+        d1 = {}
+        d2 = {}
+        for char in ransomNote:
+            d1[char] = d1.get(char,0) + 1
+        
+        for char in magazine:
+            d2[char] = d2.get(char,0) + 1
+        
+
+        count = 0
+        for char in d1:
+            if char not in d2 or d2[char] == 0:
+                return False
+            if d1.get(char) <= d2.get(char):
+                count +=1
+                
+        if(count == len(d1)):
+            return True
+        else:
+            return False
