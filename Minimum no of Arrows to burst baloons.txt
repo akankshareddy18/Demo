@@ -1,0 +1,23 @@
+object Solution {
+    def findMinArrowShots(points: Array[Array[Int]]): Int = {
+        var arrows = 1
+
+        val sortedpts = points.sortBy(_(1))
+        var last = sortedpts(0)(1)
+
+        for(i<- 1 until sortedpts.length){
+            if((sortedpts)(i)(0)> last){
+                arrows += 1
+                last = sortedpts(i)(1)
+
+            }
+        }
+        arrows
+        
+        
+
+        
+        
+        
+    }
+}
